@@ -1,0 +1,57 @@
+"""The code below extracts a color palette form an image using colorgram module"""
+
+import random
+import turtle
+
+# import colorgram
+# rgb_colors = []
+#
+# colors = colorgram.extract('image.jpg', 30)
+#
+# for color in colors:
+#    rgb_color = color.rgb
+#    r_value = getattr(rgb_color, 'r')
+#    g_value = getattr(rgb_color, 'g')
+#    b_value = getattr(rgb_color, 'b')
+#    rgb_tuple = (r_value, g_value, b_value)
+#    rgb_colors.append(rgb_tuple)
+#
+
+color_list_without_white_shades = [(202, 164, 110), (236, 239, 243), (149, 75, 50), 
+                                   (222, 201, 136), (53, 93, 123), (170, 154, 41), 
+                                   (138, 31, 20), (134, 163, 184), (197, 92, 73), 
+                                   (47, 121, 86), (73, 43, 35), (145, 178, 149), 
+                                   (14, 98, 70), (232, 176, 165), (160, 142, 158), 
+                                   (54, 45, 50), (101, 75, 77), (183, 205, 171), 
+                                   (36, 60, 74), (19, 86, 89), (82, 148, 129), 
+                                   (147, 17, 19), (27, 68, 102), (12, 70, 64), 
+                                   (107, 127, 153), (176, 192, 208), (168, 99, 102)]
+
+
+# Turtle settings:
+turtle.colormode(255)
+turtle.speed(15)
+turtle.penup()
+
+# Set the start position of the turtle:
+x_start = -400
+y_start = -250
+turtle.goto(x_start, y_start)
+
+
+def make_a_painting(x_start, y):
+    """Create a painting of 10 rows and 10 columns of dots"""
+    for number_of_rows in range(10):
+        for dots_in_a_row in range(10):
+            # Paint a dot with specified size and color:
+            turtle.dot(20, random.choice(color_list_without_white_shades))
+# Set space between the dots:
+            turtle.forward(50)
+# Move turtle to the next row:
+        y += 50
+        turtle.setposition(x_start, y)
+
+
+make_a_painting(x_start, y_start)
+turtle.exitonclick()
+turtle.hideturtle()
