@@ -1,4 +1,4 @@
-This program eates a colorful dot painting using the Turtle graphics module. It uses a predefined list of RGB color values extracted from an image to generate a random pattern of colored dots arranged in a grid.
+This program creates a colorful dot painting using the Turtle graphics module. It uses a predefined list of RGB color values extracted from an image to generate a random pattern of colored dots arranged in a grid.
 
 Color palette extraction: using the colorgram module to extract colors from an image file. These extracted colors are then converted to RGB tuples and stored in a list (rgb_colors).
 
